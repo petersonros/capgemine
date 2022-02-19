@@ -1,6 +1,6 @@
 const input = "monk, konm, nkom, bbc, cbb, dell, ledl, llde";
 
-const anagramCreater = (data) => { return data.split("").sort().join("");}
+const anagramCreater = (data) => {return data.split("").sort().join("");}
 
 const anagram = input
 .split(", ")
