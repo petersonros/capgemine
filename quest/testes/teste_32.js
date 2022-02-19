@@ -1,5 +1,5 @@
 function findAnagrams (str, arr){
-    let newStr = "";
+    let newStr = "cavalo";
     let output = [];
     
     for (let i = 0; i < arr.length; i++) {
@@ -16,3 +16,5 @@ function findAnagrams (str, arr){
       }
       return output;
     }
+
+    
