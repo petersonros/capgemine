@@ -14,7 +14,7 @@ function validaSenha(){
     let _minusculas = input.value.match(minusculas);
     let _caractereEspecial = input.value.match(caractereEspecial);
 
-/*     if(input.value){
+    /*     if(input.value){
         if(!_nCaractere){
             text.textContent = "falta quantidade";
             return
@@ -41,18 +41,21 @@ function validaSenha(){
         }
     }  */
 
-      if(input.value){
-        if(_digito && _maisculas && _minusculas || _caractereEspecial || _nCaractere){
-            return (text.textContent = "teste 1");
+    if(input.value){
+        if(_digit && _uppercaseChar && _lowercaseChar && _specialChar){
+            text.textContent = "Sua senha deve conter pelo menos 6 digitos.";
         }
-        if(_digito && _maisculas || _minusculas && _caractereEspecial || _nCaractere){
-            text.textContent = "teste dois";
+        if(_digit && _uppercaseChar && _lowercaseChar || _specialChar){
+            text.textContent = "Sua senha deve conter pelo menos 1 caracter especial.";
         }
-        if(_digito || _maisculas && _minusculas && _caractereEspecial || _nCaractere){
-            text.textContent = "teste 3.";
+        if(_digit || _uppercaseChar && _lowercaseChar || _specialChar){
+            text.textContent = "Sua senha deve conter pelo menos um número";
         }
-        if(_digito && _maisculas && _minusculas && _caractereEspecial && _nCaractere){
+        if(_digit && _uppercaseChar && _lowercaseChar && _specialChar){
+            text.textContent = "Sua senha deve conter pelo menos uma letra minuscula.";
+        }
+        if(_digit && _uppercaseChar && _lowercaseChar && _specialChar){
             text.textContent = "Senha forte";
         }
-    }  
+    }
 }

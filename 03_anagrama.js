@@ -1,4 +1,6 @@
-/* function sortStrChars(str) {
+
+// inicio do teste de comparação entre anagramas
+function sortStrChars(str) {
     if (!str) {
       return;
     }
@@ -8,11 +10,10 @@
     return str;
   }
 
-  //const words = ["dell", "ledl", "abc", "cba", 'boo'];
   const words = ["ifailuhkqq", "ovo", "ifailuhkqq"];
   
   function getGroupedAnagrams(words) {
-    const anagrams = {}; // {abc:[abc,cba], dell:[dell, ledl]}
+    const anagrams = {}; // organiza o anagrama em um array
     words.forEach((word) => {
       const sortedWord = sortStrChars(word);
       if (anagrams[sortedWord]) {
@@ -26,10 +27,10 @@
   const groupedAnagrams = getGroupedAnagrams(words);
   for (const sortedWord in groupedAnagrams) {
     console.log(groupedAnagrams[sortedWord].toString());
-  } */
-// fim do primeiro teste
+  }
+// fim do teste comparação de anagramas
 
-// inicio do sengundo teste
+// inicio do teste que faz o indice dos anagramas
 function group_anagrams(arr) {
 let   sortedArr = arr.map(item => item.split('').sort().join(''));
 let setArr = new Set(sortedArr);
@@ -39,13 +40,13 @@ for (let setItem of setArr) {
     let indexArr = sortedArr.reduce((acc, cur, index) => {
     if (setItem === cur) {
         acc.push(index);
-        console.log(index); // linha que eu inseri
+        console.log(index);
     }
     return acc;
     }, []);
     
     reducedObj[setItem] = indexArr;
-    console.log(indexArr); // linha que eu inseri
+    console.log(indexArr); 
 }
 
 let finalArr = [];
@@ -56,4 +57,5 @@ for (let reduceItem in reducedObj) {
 }
 return finalArr;
 }
-group_anagrams(['car','cra','rca', 'cheese','ab','ba']);
+group_anagrams(words); // exibe no console log o indice dos anagramas
+// fim do teste que faz o indice dos anagramas
