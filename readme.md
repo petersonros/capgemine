@@ -1,4 +1,4 @@
-# DESAFIO DE PROGRAMAÇÃO - ACADEMIA CAPGEMINI
+# DESAFIO DE PROGRAMAÇÃO - ACADEMIA CAPGEMINI 2022
 
 Atividade referente a terceira etapa do processo de seleção para a Academia Capgemini 2022. O objetivo dessa etapa é testar os seus conhecimentos em lógica de programação. Para isso, preparamos três questões com diferentes níveis de dificuldade. A implementação das questões pode ser feita em qualquer linguagem, porém a utilização de Java será um diferencial.
 
@@ -10,13 +10,13 @@ Exemplo:
 Entrada:
 n = 6
 
-Saída:
-     *
-    **
-   ***
-  ****
- *****
-******
+    Saída:
+         *
+        **
+       ***
+      ****
+     *****
+    ******
 
 ## Solução em JavaScript
 
