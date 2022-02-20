@@ -18,5 +18,3 @@ Saída:
 3
 Explicação:
 A lista de todos os anagramas pares são: [i, i], [q, q] e [ifa, fai] que estão nas posições [[0, 3]], [[8, 9]] e [[0, 1, 2], [1, 2, 3]].
-
-## Desenvolvendo a solução ##
