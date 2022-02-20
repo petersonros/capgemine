@@ -5,9 +5,11 @@ Atividade referente a terceira etapa do processo de seleção para a Academia Ca
 # Questão 01
 
 Escreva um algoritmo que mostre na tela uma escada de tamanho n utilizando o caractere * e espaços. A base e altura da escada devem ser iguais ao valor de n. A última linha não deve conter nenhum espaço.
+
 Exemplo:
 Entrada:
 n = 6
+
 Saída:
      *
     **
@@ -18,17 +20,17 @@ Saída:
 
 ## Solução em JavaScript
 
-let n = 6;
-function escada(n){
-    let array = [];
-    for(let i = 1; i <= n; i++){
-        let espaco = " ".repeat(n - i);
-        let letra = "*".repeat(i);
-        array.push(espaco + letra + "<br>");
+    let n = 6;
+    function escada(n){
+        let array = [];
+        for(let i = 1; i <= n; i++){
+            let espaco = " ".repeat(n - i);
+            let letra = "*".repeat(i);
+            array.push(espaco + letra + "<br>");
+        }
+        return array;
     }
-    return array;
-}
-console.log(escada(n))
+    console.log(escada(n))
 
 # Questão 02
 
@@ -50,48 +52,48 @@ Ela pode tornar a senha segura adicionando 3 caracteres, por exemplo, &ab, trans
 
 ## Solução em JavaScript
 
-const input = document.querySelector('input');
-const text = document.querySelector('span');
-input.addEventListener('input', validaSenha);
+    const input = document.querySelector('input');
+    const text = document.querySelector('span');
+    input.addEventListener('input', validaSenha);
 
-let numeros = new RegExp("[0-9]+");
-let maiusculas = new RegExp("[A-Z]+");
-let minusculas = new RegExp("[a-z]+");
-let caractereEspecial = new RegExp("[!@#$%^&*()-+]+");
+    let numeros = new RegExp("[0-9]+");
+    let maiusculas = new RegExp("[A-Z]+");
+    let minusculas = new RegExp("[a-z]+");
+    let caractereEspecial = new RegExp("[!@#$%^&*()-+]+");
 
-function validaSenha(){
-    let _nCaractere = input.value.length >= 6;
-    let _digito = input.value.match(numeros);
-    let _maisculas = input.value.match(maiusculas);
-    let _minusculas = input.value.match(minusculas);
-    let _caractereEspecial = input.value.match(caractereEspecial);
+    function validaSenha(){
+        let _nCaractere = input.value.length >= 6;
+        let _digito = input.value.match(numeros);
+        let _maisculas = input.value.match(maiusculas);
+        let _minusculas = input.value.match(minusculas);
+        let _caractereEspecial = input.value.match(caractereEspecial);
 
-    if(input.value){
-    if(!_nCaractere){
-        text.textContent = "falta quantidade";
-        return
+        if(input.value){
+        if(!_nCaractere){
+            text.textContent = "falta quantidade";
+            return
+        }
+        if(!_digito){
+            (text.textContent = "falta numero");
+            return
+        }
+        if(!_maisculas){
+            text.textContent = "falta maiuscula";
+            return
+        }
+        if(!_minusculas){
+            text.textContent = "falta minuscula";
+            return
+        }
+        if(!_caractereEspecial){
+            text.textContent = "falta especiais";
+            return
+        }
+        if( _nCaractere && _digito && _maisculas && _minusculas && _caractereEspecial ){
+            text.textContent = "Senha forte";
+            return
+        }
     }
-    if(!_digito){
-        (text.textContent = "falta numero");
-        return
-    }
-    if(!_maisculas){
-        text.textContent = "falta maiuscula";
-        return
-    }
-    if(!_minusculas){
-        text.textContent = "falta minuscula";
-        return
-    }
-    if(!_caractereEspecial){
-        text.textContent = "falta especiais";
-        return
-    }
-    if( _nCaractere && _digito && _maisculas && _minusculas && _caractereEspecial ){
-        text.textContent = "Senha forte";
-        return
-    }
-}
 
 # Questão 03
 
@@ -118,65 +120,65 @@ A lista de todos os anagramas pares são: [i, i], [q, q] e [ifa, fai] que estão
 
 inicio do teste de comparação entre anagramas
 
-function sortStrChars(str) {
-    if (!str) {
-      return;
+    function sortStrChars(str) {
+        if (!str) {
+        return;
+        }
+        str = str.split('');
+        str = str.sort();
+        str = str.join('');
+        return str;
     }
-    str = str.split('');
-    str = str.sort();
-    str = str.join('');
-    return str;
-  }
 
-  const words = ["ifailuhkqq", "ovo", "ifailuhkqq"];
-  
-  function getGroupedAnagrams(words) {
-    const anagrams = {};
-    words.forEach((word) => {
-      const sortedWord = sortStrChars(word);
-      if (anagrams[sortedWord]) {
-        return anagrams[sortedWord].push(word);
-      }
-      anagrams[sortedWord] = [word];
-    });
-    return anagrams;
-  }
-  
-  const groupedAnagrams = getGroupedAnagrams(words);
-  for (const sortedWord in groupedAnagrams) {
-    console.log(groupedAnagrams[sortedWord].toString());
-  }
+    const words = ["ifailuhkqq", "ovo", "ifailuhkqq"];
+    
+    function getGroupedAnagrams(words) {
+        const anagrams = {};
+        words.forEach((word) => {
+        const sortedWord = sortStrChars(word);
+        if (anagrams[sortedWord]) {
+            return anagrams[sortedWord].push(word);
+        }
+        anagrams[sortedWord] = [word];
+        });
+        return anagrams;
+    }
+    
+    const groupedAnagrams = getGroupedAnagrams(words);
+    for (const sortedWord in groupedAnagrams) {
+        console.log(groupedAnagrams[sortedWord].toString());
+    }
 
 fim do teste comparação de anagramas
 
 inicio do teste que faz o indice dos anagramas
 
-function group_anagrams(arr) {
-let   sortedArr = arr.map(item => item.split('').sort().join(''));
-let setArr = new Set(sortedArr);
-let reducedObj = {};
+    function group_anagrams(arr) {
+    let   sortedArr = arr.map(item => item.split('').sort().join(''));
+    let setArr = new Set(sortedArr);
+    let reducedObj = {};
 
-for (let setItem of setArr) {
-    let indexArr = sortedArr.reduce((acc, cur, index) => {
-    if (setItem === cur) {
-        acc.push(index);
-        console.log(index);
+    for (let setItem of setArr) {
+        let indexArr = sortedArr.reduce((acc, cur, index) => {
+        if (setItem === cur) {
+            acc.push(index);
+            console.log(index);
+        }
+        return acc;
+        }, []);
+        
+        reducedObj[setItem] = indexArr;
+        console.log(indexArr); 
     }
-    return acc;
-    }, []);
-    
-    reducedObj[setItem] = indexArr;
-    console.log(indexArr); 
-}
 
-let finalArr = [];
-console.log(finalArr);
+    let finalArr = [];
+    console.log(finalArr);
 
-for (let reduceItem in reducedObj) {
-    finalArr.push(reducedObj[reduceItem].map(item => arr[item]));
-}
-return finalArr;
-}
-group_anagrams(words);
+    for (let reduceItem in reducedObj) {
+        finalArr.push(reducedObj[reduceItem].map(item => arr[item]));
+    }
+    return finalArr;
+    }
+    group_anagrams(words);
 
 fim do teste que faz o indice dos anagramas
