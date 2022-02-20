@@ -18,14 +18,9 @@ Saída:
 
 ## Solução em JavaScript
 
-Informando número de degraus n
 let n = 6;
-
-Função que retornar o número de degraus
 function escada(n){
-
     let array = [];
-    
     for(let i = 1; i <= n; i++){
         let espaco = " ".repeat(n - i);
         let letra = "*".repeat(i);
@@ -65,7 +60,7 @@ let minusculas = new RegExp("[a-z]+");
 let caractereEspecial = new RegExp("[!@#$%^&*()-+]+");
 
 function validaSenha(){
-    //let _nCaractere = input.value.length >= 6;
+    let _nCaractere = input.value.length >= 6;
     let _digito = input.value.match(numeros);
     let _maisculas = input.value.match(maiusculas);
     let _minusculas = input.value.match(minusculas);
@@ -121,7 +116,8 @@ A lista de todos os anagramas pares são: [i, i], [q, q] e [ifa, fai] que estão
 
 ## Solução em JavaScript
 
-// inicio do teste de comparação entre anagramas
+inicio do teste de comparação entre anagramas
+
 function sortStrChars(str) {
     if (!str) {
       return;
@@ -135,7 +131,7 @@ function sortStrChars(str) {
   const words = ["ifailuhkqq", "ovo", "ifailuhkqq"];
   
   function getGroupedAnagrams(words) {
-    const anagrams = {}; // organiza o anagrama em um array
+    const anagrams = {};
     words.forEach((word) => {
       const sortedWord = sortStrChars(word);
       if (anagrams[sortedWord]) {
@@ -150,9 +146,11 @@ function sortStrChars(str) {
   for (const sortedWord in groupedAnagrams) {
     console.log(groupedAnagrams[sortedWord].toString());
   }
-// fim do teste comparação de anagramas
 
-// inicio do teste que faz o indice dos anagramas
+fim do teste comparação de anagramas
+
+inicio do teste que faz o indice dos anagramas
+
 function group_anagrams(arr) {
 let   sortedArr = arr.map(item => item.split('').sort().join(''));
 let setArr = new Set(sortedArr);
@@ -179,5 +177,6 @@ for (let reduceItem in reducedObj) {
 }
 return finalArr;
 }
-group_anagrams(words); // exibe no console log o indice dos anagramas
-// fim do teste que faz o indice dos anagramas
+group_anagrams(words);
+
+fim do teste que faz o indice dos anagramas
